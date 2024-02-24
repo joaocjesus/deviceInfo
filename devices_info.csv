@@ -1,0 +1,405 @@
+code,device,comment
+SM-A528B,Samsung Galaxy A52s 5G,
+SM-A536B,Samsung Galaxy A53 5G,
+SM-S901B,Samsung Galaxy S22 Exynos,
+SM-A546B/DS,Samsung Galaxy A54 5G,SM-A546B/DS not found. Using SM-A546B
+SM-A515F,Samsung Galaxy A51,
+SM-S911B,Samsung Galaxy S23,
+SM-G780G,Samsung Galaxy S20 FE LTE SD865,
+SM-G991B,Samsung Galaxy S21 5G SD888,
+SM-S918B,Samsung Galaxy S23 Ultra,
+SM-G973F,Samsung Galaxy S10 Exynos,
+SM-A226B,Samsung Galaxy A22 5G,
+SM-S908B,Samsung Galaxy S22 Ultra Exynos,
+SM-G780F,Samsung Galaxy S20 FE LTE Exynos,
+SM-G990B,Samsung Galaxy S21 FE Exynos,
+SM-A146P/N,Samsung Galaxy A14 5G,SM-A146P/N not found. Using SM-A146P
+M2101K6G,Xiaomi Redmi Note 10 Pro Global,
+VOG-L29,Huawei P30 Pro,
+SM-A127F,Samsung Galaxy A12 Nacho,
+SM-A137F,Samsung Galaxy A13,SM-A137F not found. Using SM-A13
+SM-A525F,Samsung Galaxy A52,
+SM-G781B,Samsung Galaxy S20 FE 5G SD865,
+SM-A202F,Samsung Galaxy A20e,
+SM-A346B/DSN,Samsung Galaxy A34 5G,SM-A346B/DSN not found. Using SM-A346B
+2201117TY,Xiaomi Redmi Note 11 Global,
+SM-A336B,Samsung Galaxy A33 5G,
+SM-G960F,Samsung Galaxy S9 Exynos,
+MAR-LX1A,Huawei P30 Lite,MAR-LX1A not found. Using MAR-LX1
+Note 9 Pro,Xiaomi Redmi Note 9 Pro 5G,
+MAR-LX1B,Huawei P30 Lite,MAR-LX1B not found. Using MAR-LX1
+SM-A217F,Samsung Galaxy A21s,
+SM-A405FN,Samsung Galaxy A40,
+SM-A505FN,Samsung Galaxy A50,SM-A505FN not found. Using SM-A505F
+SM-G990B2,Samsung Galaxy S21 FE Exynos,SM-G990B2 not found. Using SM-G990B
+SM-A326B,Samsung Galaxy A32,SM-A326B not found. Using SM-A32
+SM-A715F,Samsung Galaxy A71,
+SM-G975F,Samsung Galaxy S10+ Exynos,
+SM-G998B,Samsung Galaxy S21 Ultra 5G SD888,
+SM-A125F,Samsung Galaxy A12,
+SM-A415F,Samsung Galaxy A41,
+SM-G985F,Samsung Galaxy S20+ Exynos,
+SM-G950F,Samsung Galaxy S8 Exynos,
+SM-G965F,Samsung Galaxy S9+ Exynos,
+Pixel 7,Google Pixel 7,
+Pixel 7A,Google Pixel 7a,
+SM-A236B/DS,Samsung Galaxy A23 5G,SM-A236B/DS not found. Using SM-A236B
+M2102J20SG,POCO X3 Pro,
+Note 8 Pro,Xiaomi Redmi Note 8 Pro,
+Pixel 6a,Google Pixel 6a,
+Pixel 7 Pro,Google Pixel 7 Pro,
+ELE-L29,Huawei P30,
+ANE-LX1,Huawei nova 3e,
+SM-G980F,Samsung Galaxy S20 Exynos,
+SM-A526B,Samsung Galaxy A52 5G,
+2209116AG,,2209116AG not found. Using 220911
+SNE-LX1,Huawei Mate 20 Lite,
+SM-S906B,Samsung Galaxy S22+ Exynos,
+SM-F721B,Samsung Galaxy Z Flip4,
+21081111RG,Xiaomi 11T,
+2109119DG,Xiaomi 11 Lite 5G NE,
+SM-A705FN,Samsung Galaxy A70,SM-A705FN not found. Using SM-A705F
+2201117SY,Xiaomi Redmi Note 11S Global,
+22126RN91Y,,22126RN91Y not found. Using 22126RN
+SM-F731B,Samsung Galaxy Z Flip5,
+21091116UG,Xiaomi Redmi Note 11 Pro+,
+EML-L29,Huawei P20,
+SM-A225F,Samsung Galaxy A22,
+SM-A520F,Samsung Galaxy A5 (2017),
+SM-M127F,Samsung Galaxy M12,
+SM-M215F,Samsung Galaxy M21,
+SM-S916B,Samsung Galaxy S23+,
+23078PND5G,,23078PND5G not found. Using 23078PN
+M2101K9G,Xiaomi Mi 11 Lite 5G,
+Note 8T,Xiaomi Redmi Note 8T,
+M2007J20CG,POCO X3 NFC,
+POT-LX1,Huawei P smart 2019,
+SM-A136B,Samsung Galaxy A13 5G,
+SM-A145R/DSN,Samsung Galaxy A14 4G,SM-A145R/DSN not found. Using SM-A145R
+SM-A750FN,Samsung Galaxy A7 (2018),SM-A750FN not found. Using SM-A750F
+SM-N770F,Samsung Galaxy Note10 Lite,
+Note 7,Cubot Note 7,
+SM-G996B,Samsung Galaxy S21+ 5G SD888,
+SM-G930F,Samsung Galaxy S7 Exynos,
+SM-G955F,Samsung Galaxy S8+ Exynos,
+2107113SG,Xiaomi Redmi Note 11T Pro,
+2201116TG,Xiaomi Redmi Note 11 Pro Global,
+22120RN86G,,22120RN86G not found. Using 22120RN
+M2007J17G,Xiaomi Mi 10T Lite,
+LYA-L29,Huawei Mate 20 Pro,
+CLT-L29,Huawei P20 Pro,
+SM-A035G/DSN,Samsung Galaxy A03,SM-A035G/DSN not found. Using SM-A035G
+SM-A145F,Samsung Galaxy A14 4G,
+SM-N975F,Samsung Galaxy Note10+ Exynos,
+SM-G970F,Samsung Galaxy S10e Exynos,
+SM-F711B,Samsung Galaxy Z Flip3 5G,
+2303CRA44A,,2303CRA44A not found. Using 2303CRA
+M2101K9AG,Xiaomi Mi 11 Lite,
+M2103K19G,Xiaomi Redmi Note 10 5G,
+22081212UG,Xiaomi 12T Pro,
+M2101K7AG,Xiaomi Redmi Note 10,
+M2101K7BNY,Xiaomi Redmi Note 10S,
+2201122G,Xiaomi 12 Pro,
+2201116PG,POCO X4 Pro 5G,
+2201116SG,Xiaomi Redmi Note 11 Pro 5G Global,
+M2003J15SC,Xiaomi Redmi Note 9,
+FP3,Intex Cloud Scan FP,FP3 not found. Using FP
+Pixel 4a,Google Pixel 4a 5G,
+FLA-LX1,Huawei Y9 (2018),
+HMA-L29,Huawei Mate 20,
+RNE-L21,Huawei Mate 10 Lite,
+HRY-LX1,Huawei Honor 10 Lite,
+JNY-LX1,,JNY-LX1 not found. Using JNY-L
+moto e20,Motorola Moto E20,
+Moto G10,Motorola Moto G10 Power,
+Moto G30,Motorola Moto G30,
+Moto G7 Power,Motorola Moto G7 Power,
+IN2025,,IN2025 not found. Using IN202
+CPH2219,Oppo F19s,
+CPH2211,Oppo A94 5G,
+CPH2307,Oppo Find X5,
+23021RAA2Y,,23021RAA2Y not found. Using 23021RA
+SM-A037G/DSN,Samsung Galaxy A03s,SM-A037G/DSN not found. Using SM-A037G
+SM-A047F,Samsung Galaxy A04s,
+SM-A105FN,Samsung Galaxy A10,SM-A105FN not found. Using SM-A105F
+SM-A305F,Samsung Galaxy A30,
+SM-A307FN,Samsung Galaxy A30s,
+SM-A530F,Samsung Galaxy A8 (2018),
+SM-J600FN,Samsung Galaxy J6 (2018),SM-J600FN not found. Using SM-J600F
+SM-M307FN,Samsung Galaxy M30s,
+SM-M315F,Samsung Galaxy M01 Core,
+SM-M325FV/DS,Samsung Galaxy M32,SM-M325FV/DS not found. Using SM-M325FV
+SM-G610F,Samsung Galaxy J7 Prime,
+SM-G770F,Samsung Galaxy S10 Lite,
+SM-G988B,Samsung Galaxy S20 Ultra 5G SD865,
+SM-S711B,Samsung Galaxy S23 FE Exynos,
+23053RN02Y,,23053RN02Y not found. Using 23053RN
+2306EPN60G,,2306EPN60G not found. Using 2306EPN
+Mi Note 10 Lite,Xiaomi Mi Note 10 Lite,
+M2011K2G,Xiaomi Mi MIX Fold,M2011K2G not found. Using M2011
+22101320G,Xiaomi Redmi Note 12R Pro,22101320G not found. Using 221013
+2201123G,Xiaomi 12 Pro,2201123G not found. Using 220112
+220333QNY,Xiaomi Redmi 10C,
+2203129G,Xiaomi 12 Lite,
+M2006C3MG,Xiaomi Redmi 9C,
+22101316G,Xiaomi Redmi Note 12R Pro,22101316G not found. Using 2210131
+M2006C3LG,Xiaomi Redmi 9A,
+Poco F2 Pro,POCO F2 Pro,
+AC2003,OnePlus Nord,
+S88 Plus,Doogee S88 Plus,
+Pixel 5,Google Pixel 5,
+Pixel 8,Google Pixel 8 Pro,
+DRA-LX9,Huawei Y5 Lite 2018,DRA-LX9 not found. Using DRA-LX
+POT-LX1A,Huawei P smart 2019,
+EML-L09,Huawei P20,
+LDN-L21,Huawei Y7 Prime 2018,
+W-V851,Wiko View 5,
+LM-G900,LG Velvet 5G,
+Moto e13,Motorola Moto E13,
+Moto G22,Motorola Moto G22,
+Moto G54 5G,Motorola Moto G54 5G Power,
+Moto G8 Power,Motorola Moto G8 Power Lite,
+Moto G9 Play,Motorola Moto G9 Play,
+Moto G9 Plus,Motorola Moto G9 Plus,
+9030,Xiaomi Redmi 7A,9030 not found. Using 903
+LE2123,,LE2123 not found. Using LE212
+CPH2333,Oppo A96,
+CPH2067,Oppo A72,
+CPH2065,Oppo Reno4 Z 5G,
+CPH2005,Oppo F15,CPH2005 not found. Using CPH200
+RMX3231,Realme Narzo 50i,
+RMX3081,Realme 8 Pro,
+RMX3241,Realme 8 5G,
+23021RAAEG,,23021RAAEG not found. Using 23021RA
+SM-A025G/DSN,Samsung Galaxy A02s,SM-A025G/DSN not found. Using SM-A025G
+SM-A135F,Samsung Galaxy A13,
+SM-A205F,Samsung Galaxy A20,
+SM-A600FN,Samsung Galaxy A6 (2018),SM-A600FN not found. Using SM-A600F
+SM-A605FN,Samsung Galaxy A6 Plus (2018),
+SM-A725F,Samsung Galaxy A72,
+SM-A805F,Samsung Galaxy A80,
+SM-G532F,Samsung Galaxy Grand Prime Plus,
+SM-N950F,Samsung Galaxy Note8 Exynos,
+SM-N960F,Samsung Galaxy Note9 Exynos,
+SM-G973U1,Samsung Galaxy S10 SD855,SM-G973U1 not found. Using SM-G973U
+SM-G970U1,Samsung Galaxy S10e SD855,SM-G970U1 not found. Using SM-G970U
+SM-G986B,Samsung Galaxy S20+ 5G Exynos,
+SM-G981B,Samsung Galaxy S20 5G Exynos,
+SM-G920F,Samsung Galaxy S6,
+SM-G935F,Samsung Galaxy S7 Edge Exynos,
+T Phone Pro,T-Mobile REVVL 6 Pro,
+Note 16 Pro,Ulefone Note 16 Pro,
+23053RN02A,,23053RN02A not found. Using 23053RN
+KI5k,Tecno Spark 10C,
+X98PRO,,X98PRO not found. Using X98PR
+21061110AG,POCO X3 GT,
+22041216G,POCO M4 5G,22041216G not found. Using 2204121
+M2004J19C,Xiaomi Redmi 9,
+2201117PG,POCO M4 Pro,
+220233L2G,Xiaomi Redmi 10A,
+220733SG,Xiaomi Redmi A1,
+2201117SI,Xiaomi Redmi Note 11S Global,
+22011119UY,Xiaomi Redmi 10 2022,
+22101316UG,Xiaomi Redmi Note 12R Pro,22101316UG not found. Using 2210131
+22111317G,,22111317G not found. Using 221113
+22111317PG,,22111317PG not found. Using 2211131
+M1908C3JG/G,Xiaomi Redmi Note 8T,M1908C3JG/G not found. Using M1908C3JG
+M2007J3SG,Xiaomi Mi 10T Pro,
+M2007J22G,Xiaomi Redmi Note 9T,
+M2012K11AG,POCO F3,
+Blade A31 Lite,ZTE Blade A31 Lite,
+Blade A32,ZTE Blade V50 5G,
+5001D,BQ Mobile BQ-5001L Contact,5001D not found. Using 5001
+TFY-LX1,,TFY-LX1 not found. Using TFY-L
+5028D,Verykool Bolt s5028,5028D not found. Using 5028
+AC55HE,,AC55HE not found. Using AC55H
+AC2001,OnePlus Nord,
+BV5300 Pro,Blackview BV5300 Pro,
+BV6300 Pro,Blackview BV6300 Pro,
+BV9800 Pro,Blackview BV9800 Pro,
+QT-10.1,,QT-10.1 not found. Using QT-10
+GS185,Gigaset GS185,
+Pixel 3,Google Pixel 3 XL,
+Pixel 3a,Google Pixel 3a XL,
+Pixel 6,Google Pixel 6 Pro,
+Pixel 6 Pro,Google Pixel 6 Pro,
+Pixel 8 Pro,Google Pixel 8 Pro,
+STK-LX1,Huawei Honor 9x Global,
+WAS-LX1A,Huawei P10 Lite,
+MAR-LX1M,Huawei P30 Lite,
+Mate 40,Huawei Mate 40 RS,
+BND-L21,Huawei Honor 7X,
+YAL-L21,Huawei nova 5T,
+JSN-L21,Huawei Honor 8x,
+BLA-L29,Huawei Mate 10 Porsche Design,
+PRA-LX1,Huawei P8 Lite 2017,
+VKY-L09,Huawei P10 Plus,
+VTR-L09,Huawei P10,
+JKM-LX2,Huawei Y8s,
+DUB-LX1,Huawei Y7 2019,
+JLN-LX1,Huawei nova 9 SE,JLN-LX1 not found. Using JLN-L
+I002D,,I002D not found. Using I002
+W-P311,,W-P311 not found. Using W-P31
+W-V730,,W-V730 not found. Using W-V73
+H8216,Sony Xperia XZ2,
+LM-G710,LG G7 ThinQ,
+LM-G810,LG G8s ThinQ,
+LM-X120,LG K20,
+LM-X430,LG K40S,
+LM-K510,LG K51S,
+LM-K520,LG K52,
+H930,LG V30,
+LM-V405,LG V40 ThinQ,
+M320,Acer Liquid M320,
+Edge,Motorola Edge 2023,
+Edge 20,Motorola Edge 20 Fusion,
+edge 30 Fusion,Motorola Edge 30 Fusion,
+edge 30 neo,Motorola Edge 30 Neo,
+XT2173-3,,XT2173-3 not found. Using XT217
+Edge 40,Motorola Edge 40 Neo,
+Edge 40 Neo,Motorola Edge 40 Neo,
+XT1021,Motorola Moto E,
+Moto E5,Motorola Moto E5 Play Android Oreo (Go Edition),
+G10,Nokia G10,
+Moto G100,Motorola Moto G100,
+G20,Lenovo Moto Tab G20,
+G21,Nokia G21,
+KE7,Huawei Pocket 2,KE7 not found. Using KE
+Moto G42,Motorola Moto G42,
+Moto G5,Motorola Moto G5s,
+moto G51 5G,Motorola Moto G51 5G,
+Moto G6 Play,Motorola Moto G6 Play,
+Moto G8,Motorola Moto G8 Power Lite,
+MP07,,MP07 not found. Using MP0
+OT19,Geecoo Hot1,OT19 not found. Using OT1
+One Action,Motorola One Action,
+TA-1012,Nokia 8,
+TA-1024,Nokia 5,
+TA-1535,,TA-1535 not found. Using TA-15
+IN2013,,IN2013 not found. Using IN201
+HD1903,,HD1903 not found. Using HD190
+KB2003,,KB2003 not found. Using KB200
+LE2113,,LE2113 not found. Using LE211
+CPH2339,Oppo A77 5G,
+CPH2371,Oppo Reno7 A 5G,
+CPH2173,Oppo A15s,CPH2173 not found. Using CPH217
+CPH2025,Oppo Reno4 Pro EU,CPH2025 not found. Using CPH20
+CPH2009,Oppo F15,CPH2009 not found. Using CPH200
+CPH2135,Oppo A53s 5G,
+CPH2195,Oppo A53s 5G,CPH2195 not found. Using CPH21
+CPH2269,Oppo A16,
+CPH2271,Oppo A54s,CPH2271 not found. Using CPH227
+A5010,OnePlus 5T,
+A60 Pro,Blackview A60 Pro,
+A6010,OnePlus 6T,
+WP22,Oukitel WP22,
+BF7n,Tecno Pop 7 Pro,BF7n not found. Using BF7
+RMX2151,Realme 7,
+RMX2030,Realme 6i RMX2002,RMX2030 not found. Using RMX20
+RMX2170,Realme 7 Pro,
+RMX3263,Realme C25Y,RMX3263 not found. Using RMX326
+RMX3472,Realme 9 Pro,
+CPH2145,Oppo Find X3 Lite,
+RMX3261,Realme C21Y,
+23028RA60L,,23028RA60L not found. Using 23028RA
+23028RN4DG,,23028RN4DG not found. Using 23028RN
+C30,Blackview Oscal C30,
+C33,Oukitel C33,
+RMX3085,Realme 8 Pro,RMX3085 not found. Using RMX308
+SM-A032F,Samsung Galaxy A03,SM-A032F not found. Using SM-A03
+SM-A045F,Samsung Galaxy A04,
+SM-A105F,Samsung Galaxy A10,
+SM-A107F,Samsung Galaxy A10s,
+SM-A207F,Samsung Galaxy A20s,
+SM-A300FU,Samsung Galaxy A3,
+SM-A315G,Samsung Galaxy A31,SM-A315G not found. Using SM-A315
+SM-A325F,Samsung Galaxy A32,
+SM-A346E/DSN,Samsung Galaxy A34 5G,SM-A346E/DSN not found. Using SM-A346E
+SM-A546E,Samsung Galaxy A54 5G,
+SM-A705MN,Samsung Galaxy A70,SM-A705MN not found. Using SM-A705
+SM-A920F,Samsung Galaxy A9 (2018),
+SM-J320F,Samsung Galaxy J3 (2016) SM-J320F,
+SM-J400F,Samsung Galaxy J4 (2018),
+SM-J415F,Samsung Galaxy J4+,
+SM-J510FN,Samsung Galaxy J5 (2016),SM-J510FN not found. Using SM-J510F
+SM-J600F,Samsung Galaxy J6 (2018),
+SM-J730F,Samsung Galaxy J7 (2017),
+SM-M115F,Samsung Galaxy M11,
+SM-M205F,Samsung Galaxy M20,
+SM-M236B/DS,Samsung Galaxy M23,SM-M236B/DS not found. Using SM-M236B
+SM-M515F,Samsung Galaxy M51,
+SM-M526BR,Samsung Galaxy M52 5G,
+SM-N980F,Samsung Galaxy Note20 LTE SD865+,
+SM-N986B,Samsung Galaxy Note20 Ultra 5G SD865+,
+SM-N986U1,Samsung Galaxy Note20 Ultra 5G SD865+,SM-N986U1 not found. Using SM-N986
+SM-N9005,Samsung Galaxy Note 3 N9005 LTE,
+SM-G977P,Samsung Galaxy S10 5G Exynos,SM-G977P not found. Using SM-G977
+SM-G9730,Samsung Galaxy S10 Exynos,SM-G9730 not found. Using SM-G973
+SM-G736B,Samsung Galaxy XCover6 Pro,
+SM-G981U1,Samsung Galaxy S20 5G SD865,
+SM-G990U1,Samsung Galaxy S21 FE SD888,
+SM-S906E,Samsung Galaxy S22+ Exynos,
+SM-S928B,Samsung Galaxy S24 Ultra,
+SM-G901F,Samsung Galaxy S5 Plus,
+SM-G800F,Samsung Galaxy S5 Mini,
+SM-G390F,Samsung Galaxy Xcover 4,
+SM-G398FN,Samsung Galaxy Xcover 4s,SM-G398FN not found. Using SM-G398F
+SM-G525F,Samsung Galaxy XCover 5,
+SM-F926B,Samsung Galaxy Z Fold5,SM-F926B not found. Using SM-F9
+SM-F936B,Samsung Galaxy Z Fold4,
+XQ-AT51,Sony Xperia 1 II,
+NAM-LX9,,NAM-LX9 not found. Using NAM-L
+F3311,Sony Xperia E5,
+ANA-NX9,,ANA-NX9 not found. Using ANA-N
+A5 Pro,HiSense A5 Pro,
+A52,Blackview A52 Pro,
+A200 Pro,Blackview A200 Pro,
+A063,Nothing Phone (2),A063 not found. Using A06
+A6003,OnePlus 6,
+B1,iiiF150 B1 Pro Plus,
+Note 12,Xiaomi Redmi Note 12 Pro 4G,
+Note 12P,Ulefone Note 12P,
+Note 9,Cubot Note 9,
+U10,Doogee U10 Pro,
+X1Max,,X1Max not found. Using X1Ma
+X50,Honor X50 Pro,
+G011C,,G011C not found. Using G011
+G3412,Sony Xperia XA1 Plus Dual,
+2000 000170 00,Motorola Moto G71 5G,
+23030RAC7Y,,23030RAC7Y not found. Using 23030RA
+2312DRAABG,,2312DRAABG not found. Using 2312DRA
+E940-2795-00,,E940-2795-00 not found. Using E940-2795
+E940-2796-00,,E940-2796-00 not found. Using E940-2796
+KI5q,Tecno Spark 10C,KI5q not found. Using KI5
+X665B,Infinix Hot 12i,
+X669C,Infinix Hot 30i X669C,
+V2247,Vivo X90s,V2247 not found. Using V224
+V2023,Vivo Y50t,
+VFD 730,Nokia Lumia 730 Dual SIM,
+VFD 529,Vodafone Smart E9,
+Mi 10,Xiaomi Mi 10 Ultra,
+Mi 9,Xiaomi Mi CC9 Pro,
+Mi 9T,Xiaomi Mi 9T Pro,
+Mi A2 Lite,Xiaomi Mi A2 Lite,
+M2010J19SG,Xiaomi Redmi 9T,
+220733SFG,Xiaomi Redmi A1+,
+22071212AG,Xiaomi 12T,
+M2103K19PG,POCO M3 Pro 5G,
+21061119BI,Xiaomi Redmi 10 Prime,
+Redmi 8A,Xiaomi Redmi 8A Dual,
+M2006C3MNG,Xiaomi Redmi 9C,
+M2006C3LVG,Xiaomi Redmi 9A,M2006C3LVG not found. Using M2006C3L
+M2006C3LII,Xiaomi Redmi 9A,M2006C3LII not found. Using M2006C3LI
+21061119DG,Xiaomi Redmi 10 Prime,21061119DG not found. Using 21061119
+M2101K7BG,Xiaomi Redmi Note 10S,
+M2101K7BI,Xiaomi Redmi Note 10S,
+M2101K6P,Xiaomi Redmi Note 10 Pro India,
+2201117SG,Xiaomi Redmi Note 11S Global,
+Redmi Note 8,Xiaomi Redmi Note 8 2021,
+F1,UMIDIGI F1 Play,
+Poco X3 NFC,POCO X3 NFC,
+23049PCD8G,,23049PCD8G not found. Using 23049PC
+Blade A31,ZTE Blade A31 Plus,
+Blade A51,ZTE Blade A51 Lite,
+Blade A7 2020,ZTE Blade A7 2020,
+Total: 403,Not found: 40,Found on retries: 64 out of 104
