@@ -1,2 +1,6 @@
 node_modules
 output
+package-lock.json
+.env
+build
+.DS_store

@@ -1,16 +1,26 @@
 {
-  "name": "deviceinfo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "deviceInfo",
+  "version": "0.2",
+  "description": "Fetches brand/model for specified model code(s)",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node ./build/deviceinfo.js",
+    "usage": "tsc && node ./build/deviceinfo.js ?",
+    "clean": "rimraf ./build",
+    "clean:output": "rimraf ./output",
+    "clean:all": "npm run clean && npm run clean:output"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "csv": "^6.3.6",
-    "fs": "^0.0.1-security",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.2",
     "jsdom": "^24.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
   }
 }
