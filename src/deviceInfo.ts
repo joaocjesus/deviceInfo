@@ -17,6 +17,7 @@ import {
   WRITE_TO_CACHE,
   READ_FROM_CACHE,
   CACHE_FILE,
+  USE_DEVICE_SPECIFICATIONS,
 } from './config/config.js';
 
 type ProcessCodesProps = {
@@ -74,7 +75,7 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
     }
     catch (error) {
       console.warn(`Not able to read cache file (${CACHE_FILE}).`)
-      if(WRITE_TO_CACHE) cache = [];
+      if (WRITE_TO_CACHE) cache = [];
     }
   }
 
@@ -96,22 +97,24 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
       }
     }
 
-    if (!device) {
-      // Attempting to find device via DeviceSpecifications
-      device = await getFromDeviceSpecifications(modelCode);
-      if (device) {
-        comment = `Found via DeviceSpecifications`;
+    if (USE_DEVICE_SPECIFICATIONS) {
+      if (!device) {
+        // Attempting to find device via DeviceSpecifications
+        device = await getFromDeviceSpecifications(modelCode);
+        if (device) {
+          comment = `Found via DeviceSpecifications`;
+        }
       }
-    }
 
-    // If not found, retry if it contains a '/'
-    if (!device && modelCode.includes('/')) {
-      let trimmed;
-      trimmed = modelCode.split('/')[0];
-      // Attempting to find device via DeviceSpecifications
-      device = await getFromDeviceSpecifications(trimmed);
-      if (device) {
-        comment += ` (trimmed '/')`;
+      // If not found, retry if it contains a '/'
+      if (!device && modelCode.includes('/')) {
+        let trimmed;
+        trimmed = modelCode.split('/')[0];
+        // Attempting to find device via DeviceSpecifications
+        device = await getFromDeviceSpecifications(trimmed);
+        if (device) {
+          comment += ` (trimmed '/')`;
+        }
       }
     }
 

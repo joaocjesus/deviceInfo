@@ -28,6 +28,8 @@ export const OUTPUT_STATS = true;
 export const USE_GOOGLE_CUSTOM_SEARCH = false;
 export const GOOGLE_CUSTOM_SEARCH_URL = 'https://customsearch.googleapis.com/customsearch/v1';
 
+export const USE_DEVICE_SPECIFICATIONS = true;
+
 // Caches results for future queries
 export const WRITE_TO_CACHE = true;
 export const READ_FROM_CACHE = true;
