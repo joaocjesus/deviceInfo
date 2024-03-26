@@ -50,7 +50,7 @@ npm run usage
 
 ### Getting error 429 when using Google Programmable Search Engine
    
-If query returns error 429, it might mean the search query allowance has been surpassed (free tier = 100 requests per day).
+If query returns error 429, it might mean the search query allowance has been surpassed (free tier = 100 requests per day) or requests are being made too fast. Run it with caching set to true and retry (wait between retries and it will keep adding the values).
 
 Google is offering a good amount of credits for free if you setup billing (at the time of writing)
 
