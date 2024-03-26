@@ -12,7 +12,7 @@ Ensure you have Node.js and npm installed before setting up DeviceInfo.
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/) (which includes npm) installed on your system.
-- Google Programmable Search Engine setup (not required)
+- Google Programmable Search Engine setup (not required, disabled by default)
 
    *For better results, this application can use a Google Programmable Search Engine. [Read more](https://support.google.com/programmable-search/answer/4513751).*
 
@@ -48,7 +48,7 @@ npm run usage
 
 # FAQ
 
-### Getting error 429
+### Getting error 429 when using Google Programmable Search Engine
    
 If query returns error 429, it might mean the search query allowance has been surpassed (free tier = 100 requests per day).
 

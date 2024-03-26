@@ -25,11 +25,11 @@ export const OUTPUT_STATS = true;
 // This requires a Google Programmable Search Engine setup (https://support.google.com/programmable-search/answer/4513751)
 // Also requires the API_KEY and CUSTOM_SEARCH_ID environment variables to be set.
 // E.g.: https://customsearch.googleapis.com/customsearch/v1?key=<APIKey>&cx=<CustomSearchID>
-export const USE_GOOGLE_CUSTOM_SEARCH = true;
+export const USE_GOOGLE_CUSTOM_SEARCH = false;
 export const GOOGLE_CUSTOM_SEARCH_URL = 'https://customsearch.googleapis.com/customsearch/v1';
 
 // Caches results for future queries
-export const WRITE_TO_CACHE = false;
+export const WRITE_TO_CACHE = true;
 export const READ_FROM_CACHE = true;
 export const CACHE_FILE =  './data/deviceInfoCache.json';
 
