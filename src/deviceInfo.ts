@@ -52,99 +52,106 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
   console.info(`Input file: ${inputFile}`);
   console.info(`Output file: ${outputFile}\n`);
 
-  if (code) {
-    codes = [code];
-  } else {
-    try {
-      codes = readTXTFile(inputFile) || [];
-    }
-    catch (error) {
-      console.error(error);
-    }
-  }
-  codesCount = codes?.length;
-  if (!codes || codesCount === 0) throw Error('No codes found!');
-  console.info(`${codesCount} codes to process!\n`);
-
-  if (READ_FROM_CACHE || WRITE_TO_CACHE) {
-    console.info('Loading cache...');
-    try {
-      cache = readJSONFile(CACHE_FILE);
-      if (cache) console.info(`Cache loaded: ${cache.length} items!`);
-      cacheEnabled = true;
-    }
-    catch (error) {
-      console.warn(`Not able to read cache file (${CACHE_FILE}).`)
-      if (WRITE_TO_CACHE) cache = [];
-    }
-  }
-
-  console.info(separator);
-  let count = 0;
-  for (const code of codes) {
-    let device;
-    let comment;
-    let modelCode = code.trim();
-    console.info(`(${++count}/${codesCount}) ${code}`);
-    if (cacheEnabled) {
-      const cached = cache.find((item: DeviceInfo) => item && item.code === modelCode);
-      if (cached) {
-        device = cached.device;
-        console.info('Cached:', device);
-        comment = `Cached`;
-      } else {
-        console.info('Not in cache!');
-      }
-    }
-
-    if (USE_DEVICE_SPECIFICATIONS) {
-      if (!device) {
-        // Attempting to find device via DeviceSpecifications
-        device = await getFromDeviceSpecifications(modelCode);
-        if (device) {
-          comment = `Found via DeviceSpecifications`;
-        }
-      }
-
-      // If not found, retry if it contains a '/'
-      if (!device && modelCode.includes('/')) {
-        let trimmed;
-        trimmed = modelCode.split('/')[0];
-        // Attempting to find device via DeviceSpecifications
-        device = await getFromDeviceSpecifications(trimmed);
-        if (device) {
-          comment += ` (trimmed '/')`;
-        }
-      }
-    }
-
-    // If not found in DeviceSpecifications, use Google Search
-    if (!device && USE_GOOGLE_CUSTOM_SEARCH) {
-      const model = code.trim();
-      // Attempting to find device via Google Custom Search
-      device = await getFromGoogleSearch(model);
-      if (device) {
-        googleSearchResults.push(model);
-        comment = 'Found via Google Custom Search';
-        log(comment);
-      }
-    }
-
-    // Write results
-    if (!device) {
-      if (NOT_FOUND_FILE) {
-        results_notfound.push({ code });
-        results_notfound_plain.push(code);
-      }
-      if (NOTFOUND_TO_MAIN_OUTPUT) {
-        results.push({ code, device: '', comment: 'Not found!' });
-      }
+  try {
+    if (code) {
+      codes = [code];
     } else {
-      results.push({ code, device, comment });
+      try {
+        codes = readTXTFile(inputFile) || [];
+      }
+      catch (error) {
+        console.error(error);
+      }
     }
-    console.info(); // Line break
+    codesCount = codes?.length;
+    if (!codes || codesCount === 0) throw Error('No codes found!');
+    console.info(`${codesCount} codes to process!\n`);
+
+    if (READ_FROM_CACHE || WRITE_TO_CACHE) {
+      console.info('Loading cache...');
+      try {
+        cache = readJSONFile(CACHE_FILE);
+        if (cache) console.info(`Cache loaded: ${cache.length} items!`);
+        cacheEnabled = true;
+      }
+      catch (error) {
+        console.warn(`Not able to read cache file (${CACHE_FILE}).`)
+        if (WRITE_TO_CACHE) cache = [];
+      }
+    }
+
+    console.info(separator);
+    let count = 0;
+    for (const code of codes) {
+      let device;
+      let comment;
+      let modelCode = code.trim();
+      console.info(`(${++count}/${codesCount}) ${code}`);
+      if (cacheEnabled) {
+        const cached = cache.find((item: DeviceInfo) => item && item.code === modelCode);
+        if (cached) {
+          device = cached.device;
+          console.info('Cached:', device);
+          comment = `Cached`;
+        } else {
+          console.info('Not in cache!');
+        }
+      }
+
+      if (USE_DEVICE_SPECIFICATIONS) {
+        if (!device) {
+          // Attempting to find device via DeviceSpecifications
+          device = await getFromDeviceSpecifications(modelCode);
+          if (device) {
+            comment = `Found via DeviceSpecifications`;
+          }
+        }
+
+        // If not found, retry if it contains a '/'
+        if (!device && modelCode.includes('/')) {
+          let trimmed;
+          trimmed = modelCode.split('/')[0];
+          // Attempting to find device via DeviceSpecifications
+          device = await getFromDeviceSpecifications(trimmed);
+          if (device) {
+            comment += ` (trimmed '/')`;
+          }
+        }
+      }
+
+      // If not found in DeviceSpecifications, use Google Search
+      if (!device && USE_GOOGLE_CUSTOM_SEARCH) {
+        const model = code.trim();
+        // Attempting to find device via Google Custom Search
+        device = await getFromGoogleSearch(model);
+        if (device) {
+          googleSearchResults.push(model);
+          comment = 'Found via Google Custom Search';
+          log(comment);
+        }
+      }
+
+      // Write results
+      if (!device) {
+        if (NOT_FOUND_FILE) {
+          results_notfound.push({ code });
+          results_notfound_plain.push(code);
+        }
+        if (NOTFOUND_TO_MAIN_OUTPUT) {
+          results.push({ code, device: '', comment: 'Not found!' });
+        }
+      } else {
+        results.push({ code, device, comment });
+      }
+      console.info(); // Line break
+    }
   }
-  saveResults();
+  catch (e) {
+    console.error(e);
+  }
+  finally {
+    saveResults();
+  }
 }
 
 async function saveResults() {
