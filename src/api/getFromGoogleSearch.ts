@@ -47,7 +47,7 @@ const getFromGoogleSearch = async (code: string) => {
       });
       const device = findCommonString(titles);
       if (device) {
-        console.info(device);
+        console.info('Found: ', device);
         return device
       }
     }

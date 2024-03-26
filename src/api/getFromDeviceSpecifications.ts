@@ -15,7 +15,7 @@ const getDeviceFromDSData = (data: DeviceData[]): string | undefined => {
   
       if (match) {
         const device = match[1];
-        console.info(device);
+        console.info('Found: ', device);
         return device;
       } else {
         console.error("Unable to extract brand and model using regex!");
