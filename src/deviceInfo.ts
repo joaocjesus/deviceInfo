@@ -51,178 +51,180 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
   console.info(`Input file: ${inputFile}`);
   console.info(`Output file: ${outputFile}\n`);
 
-  try {
-    if (code) {
-      codes = [code];
-    } else {
-      try {
-        codes = readTXTFile(inputFile) || [];
-      }
-      catch (error) {
-        console.error(error);
-      }
+  if (code) {
+    codes = [code];
+  } else {
+    try {
+      codes = readTXTFile(inputFile) || [];
     }
-    codesCount = codes?.length;
-    if (!codes || codesCount === 0) throw Error('No codes found!');
-    console.info(`${codesCount} codes to process!\n`);
-
-    if (READ_FROM_CACHE || WRITE_TO_CACHE) {
-      console.info('Loading cache...');
-      try {
-        cache = readJSONFile(CACHE_FILE);
-        if(cache) console.info(`Cache loaded: ${cache.length} items!`);
-        cacheEnabled = true;
-      }
-      catch (error) {
-        console.warn(`Not able to read cache file (${CACHE_FILE}).`)
-      }
+    catch (error) {
+      console.error(error);
     }
+  }
+  codesCount = codes?.length;
+  if (!codes || codesCount === 0) throw Error('No codes found!');
+  console.info(`${codesCount} codes to process!\n`);
 
-    console.info(separator);
+  if (READ_FROM_CACHE || WRITE_TO_CACHE) {
+    console.info('Loading cache...');
+    try {
+      cache = readJSONFile(CACHE_FILE);
+      if (cache) console.info(`Cache loaded: ${cache.length} items!`);
+      cacheEnabled = true;
+    }
+    catch (error) {
+      console.warn(`Not able to read cache file (${CACHE_FILE}).`)
+      if(WRITE_TO_CACHE) cache = [];
+    }
+  }
 
-    let count = 0;
-    for (const code of codes) {
-      let device;
-      let comment;
-      let modelCode = code.trim();
-      console.info(`(${++count}/${codesCount}) ${code}`);
-      if (cacheEnabled) {
-        const cached = cache.find((item: DeviceInfo) => item && item.code === modelCode);
-        if (cached) {
-          device = cached.device;
-          console.info('Cached:', device);
-          comment = `Cached`;
-        } else {
-          console.info('Not found in cache!');
-        }
-      }
-
-      if (!device) {
-        // Attempting to find device via DeviceSpecifications
-        device = await getFromDeviceSpecifications(modelCode);
-        if (device) {
-          comment = `Found via DeviceSpecifications`;
-        }
-      }
-
-      // If not found, retry if it contains a '/'
-      if (!device && modelCode.includes('/')) {
-        let trimmed;
-        trimmed = modelCode.split('/')[0];
-        // Attempting to find device via DeviceSpecifications
-        device = await getFromDeviceSpecifications(trimmed);
-        if (device) {
-          comment += ` (trimmed '/')`;
-        }
-      }
-
-      // If not found in DeviceSpecifications, use Google Search
-      if (!device && USE_GOOGLE_CUSTOM_SEARCH) {
-        const model = code.trim();
-        // Attempting to find device via Google Custom Search
-        device = await getFromGoogleSearch(model);
-        if (device) {
-          googleSearchResults.push(model);
-          comment = 'Found via Google Custom Search';
-          log(comment);
-        }
-      }
-
-      // Write results
-      if (!device) {
-        if (NOT_FOUND_FILE) {
-          results_notfound.push({ code });
-          results_notfound_plain.push(code);
-        }
-        if (NOTFOUND_TO_MAIN_OUTPUT) {
-          results.push({ code, device: '', comment: 'Not found!' });
-        }
+  console.info(separator);
+  let count = 0;
+  for (const code of codes) {
+    let device;
+    let comment;
+    let modelCode = code.trim();
+    console.info(`(${++count}/${codesCount}) ${code}`);
+    if (cacheEnabled) {
+      const cached = cache.find((item: DeviceInfo) => item && item.code === modelCode);
+      if (cached) {
+        device = cached.device;
+        console.info('Cached:', device);
+        comment = `Cached`;
       } else {
-        results.push({ code, device, comment });
+        console.info('Not in cache!');
       }
-      console.info(); // Line break
     }
-  }
-  catch (e) {
-    console.error(e);
-  }
-  finally {
-    saveResults();
-  }
-}
 
-function saveResults() {
-  const stats: DeviceInfo[] = [];
-  if (OUTPUT_STATS) {
-    const gSearchEnabled = USE_GOOGLE_CUSTOM_SEARCH ? '' : ' (Not enabled)';
-    const googleFound = `Found with Google Search: ${googleSearchResults.length}${gSearchEnabled}`;
-    const statsContent: DeviceInfo = {
-      code: `Total: ${codesCount}   Processed: ${results.length}`,
-      comment: `${cache ? `Already cached: ${cache.length}   `: ''}Not found: ${results_notfound.length}`,
-      device: googleFound,
-    };
-    stats.push(statsContent);
-    console.info(separator); // Print dashes as a separator
-    console.info(Object.values(statsContent).join('\n'));
+    if (!device) {
+      // Attempting to find device via DeviceSpecifications
+      device = await getFromDeviceSpecifications(modelCode);
+      if (device) {
+        comment = `Found via DeviceSpecifications`;
+      }
+    }
+
+    // If not found, retry if it contains a '/'
+    if (!device && modelCode.includes('/')) {
+      let trimmed;
+      trimmed = modelCode.split('/')[0];
+      // Attempting to find device via DeviceSpecifications
+      device = await getFromDeviceSpecifications(trimmed);
+      if (device) {
+        comment += ` (trimmed '/')`;
+      }
+    }
+
+    // If not found in DeviceSpecifications, use Google Search
+    if (!device && USE_GOOGLE_CUSTOM_SEARCH) {
+      const model = code.trim();
+      // Attempting to find device via Google Custom Search
+      device = await getFromGoogleSearch(model);
+      if (device) {
+        googleSearchResults.push(model);
+        comment = 'Found via Google Custom Search';
+        log(comment);
+      }
+    }
+
+    // Write results
+    if (!device) {
+      if (NOT_FOUND_FILE) {
+        results_notfound.push({ code });
+        results_notfound_plain.push(code);
+      }
+      if (NOTFOUND_TO_MAIN_OUTPUT) {
+        results.push({ code, device: '', comment: 'Not found!' });
+      }
+    } else {
+      results.push({ code, device, comment });
+    }
     console.info(); // Line break
   }
+  saveResults();
+}
 
-  if (WRITE_TO_CACHE && results.length > 0) {
-    let values = results;
-    let newItems = 0;
-    if (cacheEnabled) {
-      // Check if device already exists in cache and adds it if it doesn't
-      for (const filteredDevice of results) {
-        if (filteredDevice && filteredDevice.device && filteredDevice?.device.length > 0) {
-          const foundInCache = cache.find((item: DeviceInfo) => item?.code && item.code === filteredDevice.code);
-          if (!foundInCache) {
-            cache.push(filteredDevice);
-            newItems++;
+async function saveResults() {
+  return new Promise(resolve => {
+    const stats: DeviceInfo[] = [];
+    if (OUTPUT_STATS) {
+      const gSearchEnabled = USE_GOOGLE_CUSTOM_SEARCH ? '' : ' (Not enabled)';
+      const googleFound = `Found with Google Search: ${googleSearchResults.length}${gSearchEnabled}`;
+      const statsContent: DeviceInfo = {
+        code: `Total: ${codesCount}   Processed: ${results.length}`,
+        comment: `${cache ? `Already cached: ${cache.length}   ` : ''}Not found: ${results_notfound.length}`,
+        device: googleFound,
+      };
+      stats.push(statsContent);
+      console.info(separator); // Print dashes as a separator
+      console.info(Object.values(statsContent).join('\n'));
+      console.info(); // Line break
+    }
+
+    if (WRITE_TO_CACHE && results.length > 0) {
+      let values = results;
+      let newItems = 0;
+      if (cache) {
+        // Check if device already exists in cache and adds it if it doesn't
+        for (const filteredDevice of results) {
+          if (filteredDevice && filteredDevice.device && filteredDevice?.device.length > 0) {
+            const foundInCache = cache.find((item: DeviceInfo) => item?.code && item.code === filteredDevice.code);
+            if (!foundInCache) {
+              cache.push(filteredDevice);
+              newItems++;
+            }
           }
         }
+        values = cache;
       }
-      values = cache;
-    }
 
-    writeToJSON({
-      values,
-      outputFile: CACHE_FILE,
-      message: newItems > 0
-        ? `Cached ${newItems} new result(s)!`
-        : 'Cache: No new devices found to store.',
-    });
-  }
-
-  // Write results to CSV
-  if (outputFile) {
-    if (results.length > 0) {
-      writeToCSV({
-        outputFile,
-        values: [...results, ...stats],
-        message: `Results written to ${outputFile}`,
-        columns: ['code', 'device', 'comment'],
+      writeToJSON({
+        values,
+        outputFile: CACHE_FILE,
+        message: newItems > 0
+          ? `Cached ${newItems} new result(s)!`
+          : 'Cache: No new devices found to store.',
       });
     }
-    if (results_notfound.length > 0) {
-      const notFoundOutputTXT = outputFile.replace('.csv', '_not-found.txt');
-      writeToTXT({
-        values: results_notfound_plain,
-        outputFile: notFoundOutputTXT,
-        message: `Codes not found written to ${notFoundOutputTXT}`
-      });
-    }
-  }
-}
 
-function shutdown() {
+    // Write results to CSV
+    if (outputFile) {
+      if (results.length > 0) {
+        writeToCSV({
+          outputFile,
+          values: [...results, ...stats],
+          message: `Results written to ${outputFile}`,
+          columns: ['code', 'device', 'comment'],
+        });
+      }
+      if (results_notfound.length > 0) {
+        const notFoundOutputTXT = outputFile.replace('.csv', '_not-found.txt');
+        writeToTXT({
+          values: results_notfound_plain,
+          outputFile: notFoundOutputTXT,
+          message: `Not found codes written to ${notFoundOutputTXT}`
+        });
+      }
+    }
+    resolve(true);
+  });
+};
+
+async function shutdown(exitType: number | string | Error) {
   console.info(); // Line break
-  console.info('Exiting...');
-  saveResults();
-  process.exit(0);
+  if (exitType !== 0) {
+    console.info(`Exiting (code: ${exitType})...`);
+  }
+  await saveResults();
+  process.exit(isNaN(+exitType) ? 1 : +exitType);
 }
 
-process.on('SIGTERM', shutdown);
-process.on('SIGINT', shutdown);
+[
+  'uncaughtException', 'unhandledRejection',
+  'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP',
+  'SIGABRT', 'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV',
+  'SIGUSR2', 'SIGTERM',
+].forEach(evt => process.on(evt, shutdown));
 
 // If more parameters exist
 if (process.argv.length > 4) {
