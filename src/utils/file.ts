@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { stringify } from 'csv';
-import log from './log.js';
 
 type writeToFileProps = {
   values: Array<unknown>;
@@ -9,6 +8,8 @@ type writeToFileProps = {
   columns?: string[];
   message?: string;
 }
+
+const encoding = "utf8";
 
 /**
  * Reads text from a file.
@@ -66,7 +67,7 @@ const writeToCSV = ({ values, outputFile, columns, message }: writeToFileProps) 
   stringify(values, { columns, header: true }, (err, csvOutput) => {
     if (err) throw err;
     createDirIfNotPresent(outputFile);
-    fs.writeFileSync(outputFile, csvOutput);
+    fs.writeFileSync(outputFile, csvOutput, { encoding });
     console.info(message || `CSV results written to ${outputFile}`);
   });
 }
@@ -79,7 +80,7 @@ const writeToCSV = ({ values, outputFile, columns, message }: writeToFileProps) 
 const writeToTXT = ({ values, outputFile, message }: writeToFileProps) => {
   try {
     createDirIfNotPresent(outputFile);
-    fs.writeFileSync(outputFile, values.join('\n'));
+    fs.writeFileSync(outputFile, values.join('\n'), { encoding });
     console.info(message || `Text results written to ${outputFile}`);
   }
   catch (error) {
@@ -95,7 +96,7 @@ const writeToTXT = ({ values, outputFile, message }: writeToFileProps) => {
 const writeToJSON = ({ values, outputFile, message }: writeToFileProps) => {
   try {
     createDirIfNotPresent(outputFile);
-    fs.writeFileSync(outputFile, JSON.stringify(values));
+    fs.writeFileSync(outputFile, JSON.stringify(values), { encoding });
     console.info(message || `JSON results written to ${outputFile}`);
   }
   catch (error) {
