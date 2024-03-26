@@ -37,7 +37,7 @@ const results_notfound_plain: Array<string> = [];
 const googleSearchResults: Array<string> = [];
 let codes: string[] = [];
 let cache: Array<DeviceInfo>;
-
+let codesCount: number;
 let cacheEnabled = false;
 let outputFile = DEFAULT_OUTPUT_FILE;
 const separator = '-'.repeat(50) + '\n'; // Print dashes as a separator
@@ -62,13 +62,15 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
         console.error(error);
       }
     }
-    if (!codes || codes.length === 0) throw Error('No codes found!');
+    codesCount = codes?.length;
+    if (!codes || codesCount === 0) throw Error('No codes found!');
+    console.info(`${codesCount} codes to process!\n`);
 
     if (READ_FROM_CACHE || WRITE_TO_CACHE) {
       console.info('Loading cache...');
       try {
         cache = readJSONFile(CACHE_FILE);
-        console.info(`Cache loaded: ${cache.length} items!`);
+        if(cache) console.info(`Cache loaded: ${cache.length} items!`);
         cacheEnabled = true;
       }
       catch (error) {
@@ -78,12 +80,13 @@ async function processCodes({ code, inputFile, outputFile }: ProcessCodesProps) 
 
     console.info(separator);
 
+    let count = 0;
     for (const code of codes) {
       let device;
       let comment;
       let modelCode = code.trim();
+      console.info(`(${++count}/${codesCount}) ${code}`);
       if (cacheEnabled) {
-        console.info(`Checking if '${code}' is cached...`);
         const cached = cache.find((item: DeviceInfo) => item && item.code === modelCode);
         if (cached) {
           device = cached.device;
@@ -154,8 +157,8 @@ function saveResults() {
     const gSearchEnabled = USE_GOOGLE_CUSTOM_SEARCH ? '' : ' (Not enabled)';
     const googleFound = `Found with Google Search: ${googleSearchResults.length}${gSearchEnabled}`;
     const statsContent: DeviceInfo = {
-      code: `Total: ${codes.length}   Processed: ${results.length}`,
-      comment: `Already cached: ${cache.length}   Not found: ${results_notfound.length}`,
+      code: `Total: ${codesCount}   Processed: ${results.length}`,
+      comment: `${cache ? `Already cached: ${cache.length}   `: ''}Not found: ${results_notfound.length}`,
       device: googleFound,
     };
     stats.push(statsContent);
