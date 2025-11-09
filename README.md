@@ -65,6 +65,4 @@ I've attempted to make it as precise as possible (around 99% based on my testing
 
 # Contacts
 
-Email: johncjesus@gmail.com
-
 GitHub: https://github.com/joaocjesus
